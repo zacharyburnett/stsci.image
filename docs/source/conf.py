@@ -13,7 +13,7 @@
 from datetime import datetime
 from pathlib import Path
 
-import tomli as tomli
+import tomli
 from stsci.sphinxext.conf import *
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -44,10 +44,11 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = setup_cfg['name']
-primary_author = setup_cfg["authors"][0]
-author = f'{primary_author["name"]} <{primary_author["email"]}>'
-copyright = f'{datetime.now().year}, {primary_author["name"]}'
+with open(Path(__file__).parent.parent.parent / "pyproject.toml", "rb") as metadata_file:
+    metadata = tomli.load(metadata_file)['project']
+project = metadata['name']
+author = f'{metadata["authors"][0]["name"]} <{metadata["authors"][0]["email"]}>'
+copyright = f'{datetime.today().year}, {author}'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
