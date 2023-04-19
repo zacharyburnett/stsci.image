@@ -13,7 +13,10 @@
 from datetime import datetime
 from pathlib import Path
 
-import tomli
+if sys.version_info < (3, 11):
+     import tomli as tomllib
+ else:
+     import tomllib
 from stsci.sphinxext.conf import *
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -23,7 +26,7 @@ from stsci.sphinxext.conf import *
 
 # -- General configuration -----------------------------------------------------
 with open(Path(__file__).parent.parent.parent / "pyproject.toml", "rb") as configuration_file:
-    conf = tomli.load(configuration_file)
+    conf = tomllib.load(configuration_file)
 setup_cfg = conf['project']
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
