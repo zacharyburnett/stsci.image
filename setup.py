@@ -19,6 +19,7 @@ setup(
         'numpy>=1.14',
         'scipy',
     ],
+    python_requires='>=3.7',
     packages=find_packages(),
     package_data={
         '': ['LICENSE.txt'],
