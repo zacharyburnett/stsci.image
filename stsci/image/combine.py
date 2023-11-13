@@ -69,7 +69,7 @@ def imedian(arrays, output=None, outtype=None, nlow=0, nhigh=0, badmasks=None):
     >>> median(arrays, outtype=np.float32)
     array([[ 0.,  6.],
            [12., 18.]], dtype=float32)
-    >>> bm = np.zeros((4,2,2), dtype=np.bool8)
+    >>> bm = np.zeros((4,2,2), dtype=bool)
     >>> bm[2,...] = 1
     >>> median(arrays, badmasks=bm)
     array([[ 0,  8],
@@ -120,7 +120,7 @@ def median(arrays, output=None, outtype=None, nlow=0, nhigh=0, badmasks=None):
     >>> median(arrays, outtype=np.float32)
     array([[ 0.,  6.],
            [12., 18.]], dtype=float32)
-    >>> bm = np.zeros((4,2,2), dtype=np.bool8)
+    >>> bm = np.zeros((4,2,2), dtype=bool)
     >>> bm[2,...] = 1
     >>> median(arrays, badmasks=bm)
     array([[ 0,  8],
@@ -173,7 +173,7 @@ def iaverage(arrays, output=None, outtype=None, nlow=0, nhigh=0, badmasks=None):
     >>> average(arrays, outtype=np.float32)
     array([[ 0. ,  7.5],
            [15. , 22.5]], dtype=float32)
-    >>> bm = np.zeros((4,2,2), dtype=np.bool8)
+    >>> bm = np.zeros((4,2,2), dtype=bool)
     >>> bm[2,...] = 1
     >>> average(arrays, badmasks=bm)
     array([[ 0,  9],
@@ -225,7 +225,7 @@ def average(arrays, output=None, outtype=None, nlow=0, nhigh=0, badmasks=None):
     >>> average(arrays, outtype=np.float32)
     array([[ 0. ,  7.5],
            [15. , 22.5]], dtype=float32)
-    >>> bm = np.zeros((4,2,2), dtype=np.bool8)
+    >>> bm = np.zeros((4,2,2), dtype=bool)
     >>> bm[2,...] = 1
     >>> average(arrays, badmasks=bm)
     array([[ 0,  9],
@@ -279,7 +279,7 @@ def minimum(arrays, output=None, outtype=None, nlow=0, nhigh=0, badmasks=None):
     >>> minimum(arrays, outtype=np.float32)
     array([[0., 2.],
            [4., 6.]], dtype=float32)
-    >>> bm = np.zeros((4,2,2), dtype=np.bool8)
+    >>> bm = np.zeros((4,2,2), dtype=bool)
     >>> bm[2,...] = 1
     >>> minimum(arrays, badmasks=bm)
     array([[ 0,  4],
@@ -387,5 +387,5 @@ def _bench():
     a = a.reshape((1000, 1000))
     arrays = [a*2, a*64, a*16, a*8]
     t0 = time.clock()
-    median(arrays, badmasks=np.zeros((1000,1000), dtype=np.bool8))
+    median(arrays, badmasks=np.zeros((1000,1000), dtype=bool))
     print("masked:", time.clock()-t0)

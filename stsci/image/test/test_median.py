@@ -64,7 +64,7 @@ def test_median4(arrays):
 
 
 def test_median5(arrays):
-    bm = np.zeros((4,2,2), dtype=np.bool8)
+    bm = np.zeros((4,2,2), dtype=bool)
     bm[2,...] = 1
     result = combine.median(arrays, badmasks=bm)
     expected = np.array([[ 0,  8],
