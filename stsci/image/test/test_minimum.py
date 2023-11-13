@@ -64,7 +64,7 @@ def test_minimum4(arrays):
 
 
 def test_minimum5(arrays):
-    bm = np.zeros((4,2,2), dtype=np.bool8)
+    bm = np.zeros((4,2,2), dtype=bool)
     bm[2,...] = 1
     result = combine.minimum(arrays, badmasks=bm)
     expected = np.array([[ 0,  4],

@@ -64,7 +64,7 @@ def test_average4(arrays):
 
 
 def test_average5(arrays):
-    bm = np.zeros((4,2,2), dtype=np.bool8)
+    bm = np.zeros((4,2,2), dtype=bool)
     bm[2,...] = 1
     result = combine.average(arrays, badmasks=bm)
     expected = np.array([[ 0,  9],
@@ -78,4 +78,3 @@ def test_average6(arrays):
     expected = np.array([[ 0,  7],
                          [ 9, 14]])
     assert (result == expected).all()
-
