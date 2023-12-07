@@ -2,7 +2,7 @@
 name = "stsci.image"
 description = "Image array manipulation functions"
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.9"
 license = { file = "LICENSE" }
 authors = [{ name = "STScI", email = "help@stsci.edu" }]
 classifiers = [
@@ -14,7 +14,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "numpy>=1.14",
+    "numpy",
     "scipy",
 ]
 dynamic = ['version']
