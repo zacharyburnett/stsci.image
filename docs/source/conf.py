@@ -25,9 +25,8 @@ from stsci.sphinxext.conf import *
 # sys.path.append(os.path.abspath('.'))
 
 # -- General configuration -----------------------------------------------------
-with open(Path(__file__).parent.parent.parent / "pyproject.toml", "rb") as configuration_file:
-    conf = tomllib.load(configuration_file)
-setup_cfg = conf['project']
+with open(Path(__file__).parent.parent.parent / "pyproject.toml", "rb") as metadata_file:
+    metadata = tomli.load(metadata_file)['project']
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
@@ -47,8 +46,6 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-with open(Path(__file__).parent.parent.parent / "pyproject.toml", "rb") as metadata_file:
-    metadata = tomli.load(metadata_file)['project']
 project = metadata['name']
 author = f'{metadata["authors"][0]["name"]} <{metadata["authors"][0]["email"]}>'
 copyright = f'{datetime.today().year}, {author}'
