@@ -54,3 +54,4 @@ include = ['stsci']
 "*" = ["LICENSE.txt"]
 
 [tool.setuptools_scm]
+version_file = "stsci/image/version.py"
