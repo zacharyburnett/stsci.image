@@ -2,7 +2,7 @@
 name = "stsci.image"
 description = "Image array manipulation functions"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.9,<3.13"
 authors = [
     { name = "STScI", email = "help@stsci.edu" },
 ]
